@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:our_plans_flutter/pages/RegisterPage.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -7,15 +8,21 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 158, 146, 104), // <-- Добавлено здесь
+      backgroundColor: const Color.fromARGB(
+        255,
+        158,
+        146,
+        104,
+      ), 
       body: Column(
         children: [
           Expanded(
             child: Stack(
               children: [
-                Image.asset('images/peaple Welcome.png', 
+                Image.asset(
+                  'images/peaple Welcome.png',
                   fit: BoxFit.cover,
-                  width: double.infinity, // <-- Добавлено для полной ширины
+                  width: double.infinity, 
                 ),
                 Positioned(
                   bottom: 0,
@@ -37,12 +44,9 @@ class Welcome extends StatelessWidget {
                         Text(
                           'Welcome to "our \n plans"!',
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white, 
-                            fontSize: 36,
-                          ),
+                          style: TextStyle(color: Colors.white, fontSize: 36),
                         ),
-                        SizedBox(height: 50,),
+                        SizedBox(height: 50),
                         SizedBox(
                           width: 260,
                           height: 50,
@@ -104,19 +108,29 @@ class Welcome extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('don`t have an account?', 
+                            Text(
+                              'don`t have an account?',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
                               ),
                             ),
                             TextButton(
-                              onPressed: (){}, 
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return const Register();
+                                    },
+                                  ),
+                                );
+                              },
                               child: Text(
                                 'Register',
                                 style: TextStyle(
                                   color: Color.fromARGB(255, 114, 47, 20),
-                                  fontSize: 15
+                                  fontSize: 15,
                                 ),
                               ),
                             ),

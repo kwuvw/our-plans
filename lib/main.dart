@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:our_plans_flutter/pages/RegisterPage.dart';
 import 'package:our_plans_flutter/pages/WelcomePage.dart';
+// import 'package:our_plans_flutter/pages/WelcomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Welcome(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Welcome(),
+        'register': (context) => const Register(),
+      }
     );
   }
 }
