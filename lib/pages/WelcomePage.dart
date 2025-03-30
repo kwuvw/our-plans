@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:our_plans_flutter/pages/RegisterPage.dart';
+import 'package:our_plans_flutter/pages/SignInPage.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -8,12 +9,7 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(
-        255,
-        158,
-        146,
-        104,
-      ), 
+      backgroundColor: const Color.fromARGB(255, 158, 146, 104),
       body: Column(
         children: [
           Expanded(
@@ -22,7 +18,7 @@ class Welcome extends StatelessWidget {
                 Image.asset(
                   'images/peaple Welcome.png',
                   fit: BoxFit.cover,
-                  width: double.infinity, 
+                  width: double.infinity,
                 ),
                 Positioned(
                   bottom: 0,
@@ -31,7 +27,7 @@ class Welcome extends StatelessWidget {
                   child: Container(
                     height: 450,
                     decoration: const BoxDecoration(
-                      color: Color.fromARGB(255, 158, 146, 104),
+                      color: Color.fromARGB(255, 255, 255, 255),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40),
@@ -44,7 +40,10 @@ class Welcome extends StatelessWidget {
                         Text(
                           'Welcome to "our \n plans"!',
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white, fontSize: 36),
+                          style: TextStyle(
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            fontSize: 26,
+                          ),
                         ),
                         SizedBox(height: 50),
                         SizedBox(
@@ -63,15 +62,30 @@ class Welcome extends StatelessWidget {
                                 vertical: 15,
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const SignIn();
+                                  },
+                                ),
+                              );
+                            },
                             child: Row(
                               children: [
                                 Image.asset(
-                                  'images/googleLogo.png',
+                                  'images/userIcon.png',
                                   fit: BoxFit.cover,
                                 ),
                                 SizedBox(width: 50),
-                                Text('Google', style: TextStyle(fontSize: 16)),
+                                Text(
+                                  'Sign in',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.grey[500],
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -93,48 +107,34 @@ class Welcome extends StatelessWidget {
                                 vertical: 15,
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const Register();
+                                  },
+                                ),
+                              );
+                            },
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Icon(Icons.people),
+                                Image.asset(
+                                  'images/SignUpIcon.png',
+                                  fit: BoxFit.cover,
+                                ),
                                 SizedBox(width: 50),
-                                Text('Sign in', style: TextStyle(fontSize: 16)),
+                                Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.grey[500],
+                                  ),
+                                ),
                               ],
                             ),
                           ),
-                        ),
-                        SizedBox(height: 60),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'don`t have an account?',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                              ),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return const Register();
-                                    },
-                                  ),
-                                );
-                              },
-                              child: Text(
-                                'Register',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 114, 47, 20),
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ),
-                          ],
                         ),
                       ],
                     ),

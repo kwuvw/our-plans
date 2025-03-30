@@ -61,6 +61,8 @@ flutter:
   assets:
     - images/peaple Welcome.png
     - images/googleLogo.png
+    - images/userIcon.png
+    - images/SignUpIcon.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

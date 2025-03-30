@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Register extends StatelessWidget {
-  const Register({super.key});
+class SignIn extends StatelessWidget {
+  const SignIn({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 158, 146, 104),
       body: Column(
         children: [
           Expanded(
@@ -49,7 +48,7 @@ class Register extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 50),
                         SizedBox(
                           height: 50,
                           width: 265,
@@ -65,27 +64,7 @@ class Register extends StatelessWidget {
                                   width: 1,
                                 ),
                               ),
-                              hintText: 'Username',
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 30),
-                        SizedBox(
-                          height: 50,
-                          width: 265,
-                          child: TextField(
-                            decoration: InputDecoration(
-                              border: UnderlineInputBorder(),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.grey),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 1,
-                                ),
-                              ),
-                              hintText: 'Email',
+                              hintText: 'Username or email',
                             ),
                           ),
                         ),
